@@ -1,0 +1,38 @@
+// ========================================================
+// "Leaves" Blogger Theme
+// Author: Poren Chiang <ren.chiang@gmail.com>
+// License: MIT License
+// ========================================================
+
+
+// Definitions
+
+$fallback-font: 'Source Han Sans TC', 'Noto Sans T Chinese',
+                'Source Han Sans TWHK', 'Noto Sans CJK',
+                'Pingfang TC', 'LiHei Pro', 'Apple LiGothic',
+                'Microsoft Jhenghei', sans-serif;
+
+$header-font: join((Montserrat, 'Avenir Next', 'Century Gothic'), $fallback-font);
+
+$body-font: join(('Avenir Next', 'Century Gothic', Verdana), $fallback-font);
+
+// $base-font-size: 12pt;       // est. 16px
+$heading-font-size: 5em;        // 60pt
+$subheading-font-size: 2.4em;   // 28pt
+
+$post-title-font-size: 2.7em;   // 32pt
+$body-font-size: 1.5em;         // 18pt
+
+$widget-title-font-size: 1.5em; // 18pt
+$widget-font-size: 1.25em;      // 15pt
+
+$footer-font-size: 1.25em;      // 15pt
+
+body {
+    font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font;
+    font-weight: bold;  // was Medium, but Jhenghei would not fallback properly
+}
