@@ -28,6 +28,9 @@ $widget-font-size: 1.25em;      // 15pt
 
 $footer-font-size: 1.25em;      // 15pt
 
+// Includes
+@import "normalize";
+
 body {
     font-family: $body-font;
 }
@@ -35,4 +38,27 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font;
     font-weight: bold;  // was Medium, but Jhenghei would not fallback properly
+}
+
+.heading {
+    h1 {
+        font-size: $heading-font-size;
+        letter-spacing: .06em;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: $subheading-font-size;
+        margin: 0;
+    }
+}
+
+.post {
+    header h3 {
+        font-size: $post-title-font-size;
+    }
+
+    .post-entry {
+        font-size: $body-font-size;
+    }
 }
