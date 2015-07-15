@@ -20,6 +20,7 @@ $body-font: join(('Avenir Next', 'Century Gothic', Verdana), $fallback-font);
 $heading-font-size: 5em;        // 60pt
 $subheading-font-size: 2.4em;   // 28pt
 
+$tabs-font-size: 1.5em;         // 18pt
 $post-title-font-size: 2.7em;   // 32pt
 $body-font-size: 1.5em;         // 18pt
 
@@ -40,6 +41,15 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;  // was Medium, but Jhenghei would not fallback properly
 }
 
+a {
+    color: #532016;
+}
+
+.nav-bar {
+    background: black;
+    height: 2em;
+}
+
 .heading {
     h1 {
         font-size: $heading-font-size;
@@ -53,12 +63,44 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.tabs {
+    background: black;
+    color: white;
+    font-family: $header-font;
+    font-size: $tabs-font-size;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a + a:before {
+        content: " / ";
+    }
+}
+
 .post {
     header h3 {
         font-size: $post-title-font-size;
     }
 
+    .post-meta {
+        color: #666;
+        font-size: $body-font-size;
+        font-weight: 300;
+    }
+
     .post-entry {
         font-size: $body-font-size;
+    }
+}
+
+.widgets {
+    section > h4 {
+        font-size: $widget-title-font-size;
+        font-weight: bold;
     }
 }

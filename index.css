@@ -363,6 +363,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Montserrat, "Avenir Next", "Century Gothic", "Source Han Sans TC", "Noto Sans T Chinese", "Source Han Sans TWHK", "Noto Sans CJK", "Pingfang TC", "LiHei Pro", "Apple LiGothic", "Microsoft Jhenghei", sans-serif;
   font-weight: bold; }
 
+a {
+  color: #532016; }
+
+.nav-bar {
+  background: black;
+  height: 2em; }
+
 .heading h1 {
   font-size: 5em;
   letter-spacing: .06em;
@@ -371,9 +378,31 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.4em;
   margin: 0; }
 
+.tabs {
+  background: black;
+  color: white;
+  font-family: Montserrat, "Avenir Next", "Century Gothic", "Source Han Sans TC", "Noto Sans T Chinese", "Source Han Sans TWHK", "Noto Sans CJK", "Pingfang TC", "LiHei Pro", "Apple LiGothic", "Microsoft Jhenghei", sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase; }
+  .tabs a {
+    color: white;
+    text-decoration: none; }
+  .tabs a + a:before {
+    content: " / "; }
+
 .post header h3 {
   font-size: 2.7em; }
+.post .post-meta {
+  color: #666;
+  font-size: 1.5em;
+  font-weight: 300; }
 .post .post-entry {
   font-size: 1.5em; }
+
+.widgets section > h4 {
+  font-size: 1.5em;
+  font-weight: bold; }
 
 /*# sourceMappingURL=index.css.map */
