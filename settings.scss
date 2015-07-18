@@ -1,0 +1,37 @@
+// Definitions
+
+$fallback-font: 'Source Han Sans TC', 'Noto Sans T Chinese',
+                'Source Han Sans TWHK', 'Noto Sans CJK',
+                'Pingfang TC', 'LiHei Pro', 'Apple LiGothic',
+                'Microsoft Jhenghei', sans-serif;
+
+$header-font: join((Montserrat, 'Avenir Next', 'Century Gothic'), $fallback-font);
+
+$body-font: join(('Avenir Next', 'Century Gothic', Verdana), $fallback-font);
+
+// $base-font-size: 12pt;       // est. 16px
+$heading-font-size: 3.75em;     // 60pt
+$subheading-font-size: 1.875em; // 30pt
+
+$tabs-font-size: 1.125em;       // 18pt
+$post-title-font-size: 2em;     // 32pt
+$body-font-size: 1.125em;       // 18pt
+
+$widget-title-font-size: 1.125em;   // 18pt
+$widget-font-size: 1em;             // 15pt
+
+$footer-font-size: 1em;         // 15pt
+
+// Media queries
+
+@mixin medium-up {
+    @media only screen and (min-width: 40em) {
+        @content;
+    }
+}
+
+@mixin large-up {
+    @media only screen and (min-width: 60em) {
+        @content;
+    }
+}
