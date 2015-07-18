@@ -34,7 +34,12 @@ img {
 
 .nav-bar {
     background: black;
+    color: silver;
     height: 2em;
+
+    .nav-content {
+        @include grid-row;
+    }
 }
 
 .heading {
