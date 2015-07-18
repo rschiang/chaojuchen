@@ -376,7 +376,8 @@ a {
   max-height: 100vh; }
   .heading header {
     background: rgba(17, 17, 17, 0.6);
-    padding: 1.5em 1em;
+    box-sizing: border-box;
+    padding: 1.5em;
     margin: 0 auto;
     max-height: 100%;
     max-width: 100%;
@@ -392,7 +393,16 @@ a {
     margin: 0; }
   @media only screen and (min-width: 40em) {
     .heading {
-      height: 33.33333vw; } }
+      height: 33.33333vw;
+      position: relative; }
+      .heading header {
+        left: 50%;
+        padding: 2em 3em;
+        position: absolute;
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        top: 50%; } }
 
 .tabs {
   background: black;
