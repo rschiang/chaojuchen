@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -466,6 +467,15 @@ img {
   color: #666;
   font-size: 1.125em;
   font-weight: 300; }
+  .post .post-meta ul, .post .post-meta ol {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .post .post-meta li {
+    display: inline; }
+    .post .post-meta li::before {
+      content: " · "; }
 .post .post-entry {
   font-size: 1.125em; }
 
