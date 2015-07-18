@@ -8,6 +8,7 @@ watch:
 	scss -t compressed --watch index.scss:index.css
 github:
 	git checkout gh-pages
+	git checkout master -- index.css index.html
 	git commit -am "Update site templates"
 	git push origin gh-pages
 	git checkout master
