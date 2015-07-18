@@ -367,7 +367,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold; }
 
 a {
-  color: #532016; }
+  color: #882410; }
+  a:hover {
+    color: #441208; }
+
+img {
+  max-width: 100%; }
 
 .nav-bar {
   background: black;
@@ -429,11 +434,19 @@ a {
 
 .content {
   margin: 0 auto;
-  max-width: 60em; }
+  max-width: 60em;
+  padding: 2em; }
   .content::after {
     content: "";
     display: block;
     clear: both; }
+  @media only screen and (min-width: 60em) {
+    .content {
+      padding: 3em 0; } }
+  .content img {
+    border: 1px #ccc solid;
+    border-radius: 2px;
+    padding: .33em; }
 
 @media only screen and (min-width: 60em) {
   .posts {
@@ -446,7 +459,8 @@ a {
       margin-right: 0; } }
 
 .post header h3 {
-  font-size: 2em; }
+  font-size: 2em;
+  margin: 0; }
 .post .post-meta {
   color: #666;
   font-size: 1.125em;
@@ -454,18 +468,39 @@ a {
 .post .post-entry {
   font-size: 1.125em; }
 
-@media only screen and (min-width: 60em) {
-  .widgets {
-    float: left;
-    margin: 0 1em;
-    width: 18.66667em; }
-    .widgets:first-child {
-      margin-left: 0; }
-    .widgets:last-child {
-      margin-right: 0; } }
-.widgets section > h4 {
-  font-size: 1.125em;
-  font-weight: bold; }
+.widgets {
+  font-size: 1em;
+  line-height: 1.5; }
+  @media only screen and (min-width: 60em) {
+    .widgets {
+      float: left;
+      margin: 0 1em;
+      width: 18.66667em; }
+      .widgets:first-child {
+        margin-left: 0; }
+      .widgets:last-child {
+        margin-right: 0; } }
+  .widgets section {
+    border-top: 2px #666 solid;
+    margin-bottom: 1em; }
+    .widgets section:last-child {
+      margin-bottom: 0; }
+    @media only screen and (min-width: 60em) {
+      .widgets section {
+        border-top: 0; } }
+  .widgets section > h4 {
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 2;
+    margin: 0; }
+  .widgets p, .widgets ul, .widgets ol {
+    margin: 0; }
+  .widgets li {
+    line-height: 1.75; }
+
+.categories ul, .social ul {
+  list-style: none;
+  padding: 0; }
 
 .footing {
   margin: 0 auto;
