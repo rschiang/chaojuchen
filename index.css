@@ -370,19 +370,35 @@ a {
   background: black;
   height: 2em; }
 
-.heading h1 {
-  font-size: 5em;
-  letter-spacing: .06em;
-  margin: 0; }
-.heading h2 {
-  font-size: 2.4em;
-  margin: 0; }
+.heading {
+  background: #3a3a3a url("leaves.jpg") center/cover no-repeat;
+  color: white;
+  max-height: 100vh; }
+  .heading header {
+    background: rgba(17, 17, 17, 0.6);
+    padding: 1.5em 1em;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    text-align: center; }
+  .heading h1 {
+    font-size: 3.75em;
+    letter-spacing: .06em;
+    line-height: 1.15;
+    margin: 0; }
+  .heading h2 {
+    font-size: 1.875em;
+    line-height: 1.15;
+    margin: 0; }
+  @media only screen and (min-width: 40em) {
+    .heading {
+      height: 33.33333vw; } }
 
 .tabs {
   background: black;
   color: white;
   font-family: Montserrat, "Avenir Next", "Century Gothic", "Source Han Sans TC", "Noto Sans T Chinese", "Source Han Sans TWHK", "Noto Sans CJK", "Pingfang TC", "LiHei Pro", "Apple LiGothic", "Microsoft Jhenghei", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.125em;
   font-weight: 500;
   letter-spacing: 0.025em;
   text-transform: uppercase; }
@@ -393,16 +409,16 @@ a {
     content: " / "; }
 
 .post header h3 {
-  font-size: 2.7em; }
+  font-size: 2em; }
 .post .post-meta {
   color: #666;
-  font-size: 1.5em;
+  font-size: 1.125em;
   font-weight: 300; }
 .post .post-entry {
-  font-size: 1.5em; }
+  font-size: 1.125em; }
 
 .widgets section > h4 {
-  font-size: 1.5em;
+  font-size: 1.125em;
   font-weight: bold; }
 
 /*# sourceMappingURL=index.css.map */
