@@ -411,12 +411,18 @@ a {
   font-size: 1.125em;
   font-weight: 500;
   letter-spacing: 0.025em;
+  text-align: center;
   text-transform: uppercase; }
   .tabs a {
     color: white;
+    display: block;
+    padding: .5em 1em;
     text-decoration: none; }
-  .tabs a + a:before {
-    content: " / "; }
+    .tabs a:hover {
+      background: #222; }
+    @media only screen and (min-width: 40em) {
+      .tabs a {
+        display: inline-block; } }
 
 .post header h3 {
   font-size: 2em; }

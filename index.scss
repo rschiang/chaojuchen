@@ -77,15 +77,22 @@ a {
     font-size: $tabs-font-size;
     font-weight: 500;
     letter-spacing: 0.025em;
+    text-align: center;
     text-transform: uppercase;
 
     a {
         color: white;
+        display: block;
+        padding: .5em 1em;
         text-decoration: none;
-    }
 
-    a + a:before {
-        content: " / ";
+        &:hover {
+            background: #222;
+        }
+
+        @include medium-up {
+            display: inline-block;
+        }
     }
 }
 
