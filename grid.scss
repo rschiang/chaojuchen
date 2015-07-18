@@ -36,13 +36,14 @@ $grid-gutter: 2em;
     @include large-up {
         float: left;
         margin: 0 ($grid-gutter / 2);
-        width: (($grid-width - $grid-gutter * ($grid-columns - 1)) / $grid-columns) * $columns;
+        width: (($grid-width - $grid-gutter * ($grid-columns - 1)) / $grid-columns) * $columns + ($columns - 1) * $grid-gutter;
 
         &:first-child {
             margin-left: 0;
         }
 
         &:last-child {
+            float: right;
             margin-right: 0;
         }
     }
