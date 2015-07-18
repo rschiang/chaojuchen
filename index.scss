@@ -199,5 +199,12 @@ img {
 }
 
 .footing {
-    @include grid-row;
+    background: #111;
+    color: #666;
+    font-size: $footer-font-size;
+    padding: 2em 0;
+
+    footer {
+        @include grid-row;
+    }
 }
