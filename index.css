@@ -356,6 +356,9 @@ td,
 th {
   padding: 0; }
 
+* {
+  box-sizing: border-box; }
+
 body {
   font-family: "Avenir Next", "Century Gothic", Verdana, "Source Han Sans TC", "Noto Sans T Chinese", "Source Han Sans TWHK", "Noto Sans CJK", "Pingfang TC", "LiHei Pro", "Apple LiGothic", "Microsoft Jhenghei", sans-serif; }
 
@@ -377,7 +380,7 @@ a {
   .heading header {
     background: rgba(17, 17, 17, 0.6);
     box-sizing: border-box;
-    padding: 1.5em;
+    padding: 3em 1.5em;
     margin: 0 auto;
     max-height: 100%;
     max-width: 100%;
@@ -397,7 +400,7 @@ a {
       position: relative; }
       .heading header {
         left: 50%;
-        padding: 2em 3em;
+        padding: 3em;
         position: absolute;
         -ms-transform: translate(-50%, -50%);
         -webkit-transform: translate(-50%, -50%);
@@ -424,6 +427,24 @@ a {
       .tabs a {
         display: inline-block; } }
 
+.content {
+  margin: 0 auto;
+  max-width: 60em; }
+  .content::after {
+    content: "";
+    display: block;
+    clear: both; }
+
+@media only screen and (min-width: 60em) {
+  .posts {
+    float: left;
+    margin: 0 1em;
+    width: 37.33333em; }
+    .posts:first-child {
+      margin-left: 0; }
+    .posts:last-child {
+      margin-right: 0; } }
+
 .post header h3 {
   font-size: 2em; }
 .post .post-meta {
@@ -433,8 +454,25 @@ a {
 .post .post-entry {
   font-size: 1.125em; }
 
+@media only screen and (min-width: 60em) {
+  .widgets {
+    float: left;
+    margin: 0 1em;
+    width: 18.66667em; }
+    .widgets:first-child {
+      margin-left: 0; }
+    .widgets:last-child {
+      margin-right: 0; } }
 .widgets section > h4 {
   font-size: 1.125em;
   font-weight: bold; }
+
+.footing {
+  margin: 0 auto;
+  max-width: 60em; }
+  .footing::after {
+    content: "";
+    display: block;
+    clear: both; }
 
 /*# sourceMappingURL=index.css.map */

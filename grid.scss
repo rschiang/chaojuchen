@@ -1,0 +1,49 @@
+// Definitions
+$medium-width: 40em;
+$large-width: 60em;
+
+$grid-width: 60em;
+$grid-columns: 3;
+$grid-gutter: 2em;
+
+// Media queries
+
+@mixin medium-up {
+    @media only screen and (min-width: $medium-width) {
+        @content;
+    }
+}
+
+@mixin large-up {
+    @media only screen and (min-width: $large-width) {
+        @content;
+    }
+}
+
+// Grids
+@mixin grid-row {
+    margin: 0 auto;
+    max-width: $grid-width;
+
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin grid-column($columns: 1) {
+    @include large-up {
+        float: left;
+        margin: 0 ($grid-gutter / 2);
+        width: (($grid-width - $grid-gutter * ($grid-columns - 1)) / $grid-columns) * $columns;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

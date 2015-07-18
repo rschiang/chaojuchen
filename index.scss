@@ -7,6 +7,11 @@
 // Includes
 @import "normalize";
 @import "settings";
+@import "grid";
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: $body-font;
@@ -34,7 +39,7 @@ a {
     header {
         background: rgba(#111, .6);
         box-sizing: border-box;
-        padding: 1.5em;
+        padding: 3em 1.5em;
         margin: 0 auto;
         max-height: 100%;
         max-width: 100%;
@@ -60,7 +65,7 @@ a {
 
         header {
             left: 50%;
-            padding: 2em 3em;
+            padding: 3em;
             position: absolute;
             -ms-transform: translate(-50%, -50%);
             -webkit-transform: translate(-50%, -50%);
@@ -96,6 +101,14 @@ a {
     }
 }
 
+.content {
+    @include grid-row;
+}
+
+.posts {
+    @include grid-column(2);
+}
+
 .post {
     header h3 {
         font-size: $post-title-font-size;
@@ -113,8 +126,14 @@ a {
 }
 
 .widgets {
+    @include grid-column(1);
+
     section > h4 {
         font-size: $widget-title-font-size;
         font-weight: bold;
     }
+}
+
+.footing {
+    @include grid-row;
 }

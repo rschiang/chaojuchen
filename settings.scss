@@ -21,17 +21,3 @@ $widget-title-font-size: 1.125em;   // 18pt
 $widget-font-size: 1em;             // 15pt
 
 $footer-font-size: 1em;         // 15pt
-
-// Media queries
-
-@mixin medium-up {
-    @media only screen and (min-width: 40em) {
-        @content;
-    }
-}
-
-@mixin large-up {
-    @media only screen and (min-width: 60em) {
-        @content;
-    }
-}
