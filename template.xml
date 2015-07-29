@@ -87,9 +87,9 @@ body {
         <div class="tabs">
             <nav>
                 <a href="#" class="nav-item">簡歷 Portfolio</a>
-                <a href="#" class="nav-item">期刊論文 Publications</a>
+                <a href="#" class="nav-item">研究出版 Publications</a>
                 <a href="#" class="nav-item">社論 Editorials</a>
-                <a href="#" class="nav-item">歷年文章 Archive</a>
+                <a href="#" class="nav-item">部落格 Archive</a>
             </nav>
         </div>
         <div class="content">
@@ -108,38 +108,14 @@ body {
                 </b:if>
             </b:section>
             <b:section class="widgets" id="widgets">
-                <section class="categories">
-                    <h4>文章分類</h4>
-                    <ul>
-                        <li><a href="#">期刊論文</a> (22)</li>
-                        <li><a href="#">專書論文</a> (9)</li>
-                        <li><a href="#">公共言論</a> (20)</li>
-                        <li><a href="#">雜文</a> (6)</li>
-                    </ul>
-                </section>
-                <section>
-                    <h4>作者</h4>
-                    <img alt="author" src="chaoju.jpg" />
-                    <p>陳昭如教授，臺灣大學法律學系學士、法律學研究所碩士，美國密西根大學（University of Michigan, Ann Arbor）法學碩士、法學博士，研究專長為法律史、女性主義法學、法社會學，講授法律史、女性主義法學、批判法律史、法社會學等課程。</p>
-                </section>
-                <section class="social">
-                    <ul class="icon-list">
-                        <li class="facebook icon"><a href="#" rel="external nofollow">Facebook</a></li>
-                        <li class="twitter icon"><a href="#" rel="external nofollow">Twitter</a></li>
-                        <li class="plurk icon"><a href="#" rel="external nofollow">Plurk</a></li>
-                        <li class="gplus icon"><a href="#" rel="external nofollow">Google+</a></li>
-                    </ul>
-                </section>
-            </div>
+                <b:widget id="Label1" type="Label" locked="false" />
+                <b:widget id="BlogProfile1" type="BlogProfile" locked="false" />
+            </b:section>
         </div>
         <div class="footing">
             <footer>
-                <macro:include id="footer-sections" name="sections">
-                  <macro:param default="2" name="num"/>
-                  <macro:param default="footer" name="idPrefix"/>
-                  <macro:param default="foot" name="class"/>
-                  <macro:param default="false" name="includeBottom"/>
-                </macro:include>
+                <b:section class="footer" id="footer" showaddelement="no">
+                </b:section>
             </footer>
         </div>
     </body>
@@ -253,13 +229,13 @@ body {
                     <p><data:blogCommentMessage/></p>
                     <data:blogTeamBlogMessage/>
                     <a expr:href="data:post.commentFormIframeSrc" id="comment-editor-src"/>
-                    <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src=" style="display: none" width="100%"/>
+                    <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src="" style="display: none" width="100%" />
                     <b:else/>
                     <h4 id="comment-post-message"><data:postCommentMsg/></h4>
                     <p><data:blogCommentMessage/></p>
                     <data:blogTeamBlogMessage/>
                     <a expr:href="data:post.commentFormIframeSrc" id="comment-editor-src"/>
-                    <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src=" width="100%"/>
+                    <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src="" width="100%"/>
                 </b:if>
                 <data:post.friendConnectJs/>
                 <data:post.cmtfpIframe/>
@@ -718,118 +694,5 @@ body {
             </div>
         </div>
     </b:includable>
-    <b:section-contents id='sidebar-right-1'>
-        <b:widget id='Profile1' locked='false' title='關於我自己' type='Profile'>
-            <b:includable id='main'>
-                <b:if cond='data:title != &quot;&quot;'>
-                    <h2><data:title/></h2>
-                </b:if>
-                <div class='widget-content'>
-                    <b:if cond='data:team'> <!-- team blog profile -->
-                        <ul>
-                            <b:loop values='data:authors' var='i'>
-                                <li><a class='profile-name-link g-profile' expr:href='data:i.userUrl' expr:style='&quot;background-image: url(&quot; + data:i.profileLogo + &quot;);&quot;'><data:i.display-name/></a></li>
-                            </b:loop>
-                        </ul>
 
-                        <b:else/> <!-- normal blog profile -->
-
-                        <b:if cond='data:photo.url != &quot;&quot;'>
-                            <a expr:href='data:userUrl'><img class='profile-img' expr:alt='data:photo.alt' expr:height='data:photo.height' expr:src='data:photo.url' expr:width='data:photo.width'/></a>
-                        </b:if>
-
-                        <dl class='profile-datablock'>
-                            <dt class='profile-data'>
-                                <a class='profile-name-link g-profile' expr:href='data:userUrl' expr:style='&quot;background-image: url(&quot; + data:profileLogo + &quot;);&quot;' rel='author'>
-                                    <data:displayname/>
-                                </a>
-                                <b:if cond='data:hasgoogleprofile'>
-                                    <br/>
-                                    <div class='g-follow' data-annotation='bubble' data-height='20' expr:data-href='data:userUrl'/>
-                                </b:if>
-                            </dt>
-
-                            <b:if cond='data:showlocation'>
-                                <dd class='profile-data'><data:location/></dd>
-                            </b:if>
-
-                            <b:if cond='data:aboutme != &quot;&quot;'><dd class='profile-textblock'><data:aboutme/></dd></b:if>
-                        </dl>
-                        <a class='profile-link' expr:href='data:userUrl' rel='author'><data:viewProfileMsg/></a>
-                    </b:if>
-
-                    <b:include name='quickedit'/>
-                </div>
-            </b:includable>
-        </b:widget>
-        <b:widget id='BlogArchive1' locked='false' title='網誌存檔' type='BlogArchive'>
-            <b:includable id='main'>
-                <b:if cond='data:title != &quot;&quot;'>
-                    <h2><data:title/></h2>
-                </b:if>
-                <div class='widget-content'>
-                    <div id='ArchiveList'>
-                        <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
-                            <b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
-                            <b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
-                            <b:include cond='data:style == &quot;MENU&quot;' data='data' name='menu'/>
-                        </div>
-                    </div>
-                    <b:include name='quickedit'/>
-                </div>
-            </b:includable>
-            <b:includable id='flat' var='data'>
-                <ul class='flat'>
-                    <b:loop values='data:data' var='i'>
-                        <li class='archivedate'>
-                            <a expr:href='data:i.url'><data:i.name/></a> (<data:i.post-count/>)
-                        </li>
-                    </b:loop>
-                </ul>
-            </b:includable>
-            <b:includable id='interval' var='intervalData'>
-                <b:loop values='data:intervalData' var='interval'>
-                    <ul class='hierarchy'>
-                        <li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
-                            <b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
-                            <a class='post-count-link' expr:href='data:interval.url'>
-                                <data:interval.name/>
-                            </a>
-                            <span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>
-                            <b:include cond='data:interval.data' data='interval.data' name='interval'/>
-                            <b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
-                        </li>
-                    </ul>
-                </b:loop>
-            </b:includable>
-            <b:includable id='menu' var='data'>
-                <select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
-                    <option value=''><data:title/></option>
-                    <b:loop values='data:data' var='i'>
-                        <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
-                    </b:loop>
-                </select>
-            </b:includable>
-            <b:includable id='posts' var='posts'>
-                <ul class='posts'>
-                    <b:loop values='data:posts' var='post'>
-                        <li><a expr:href='data:post.url'><data:post.title/></a></li>
-                    </b:loop>
-                </ul>
-            </b:includable>
-            <b:includable id='toggle' var='interval'>
-                <a class='toggle' href='javascript:void(0)'>
-                    <span expr:class='&quot;zippy&quot; + (data:interval.expclass == &quot;expanded&quot; ? &quot; toggle-open&quot; : &quot;&quot;)'>
-                        <b:if cond='data:interval.expclass == &quot;expanded&quot;'>
-                            &#9660;&#160;
-                            <b:elseif cond='data:blog.languageDirection == &quot;rtl&quot;'/>
-                            &#9668;&#160;
-                            <b:else/>
-                            &#9658;&#160;
-                        </b:if>
-                    </span>
-                </a>
-            </b:includable>
-        </b:widget>
-    </b:section-contents>
 </html>
