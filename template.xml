@@ -7,6 +7,7 @@
         <b:include data="blog" name="all-head-content" />
         <title><data:blog.pageTitle/></title>
 
+        <b:template-skin />
         <link rel="stylesheet" href="http://rschiang.github.io/chaojuchen/index.css" type="text/css" />
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat" type="text/css" />
         <b:skin><![CDATA[/*
@@ -25,7 +26,6 @@
                 background-image: $(heading.image.override);
             }
             ]]></b:skin>
-        <b:template-skin />
         <b:include data="blog" name="google-analytics" />
     </head>
     <body>
