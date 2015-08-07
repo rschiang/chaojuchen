@@ -93,6 +93,7 @@
                                     <b:else/>
                                     <data:post.title/>
                                 </b:if>
+                                <b:include data="post" name="postQuickEdit" />
                             </h3>
                             <div class="post-meta">
                                 <b:if cond="data:top.showTimestamp">
@@ -109,7 +110,6 @@
                                     </b:loop>
                                     </ul>
                                 </b:if>
-                                <b:include data="post" name="postQuickEdit" />
                                 <b:include cond="data:blog.pageType != &quot;static_page&quot; and data:post.allowComments and data:post.numComments != 0" data="post" name="comment_count_picker" />
                             </div>
                         </header>

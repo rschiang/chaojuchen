@@ -21,6 +21,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font;
     font-weight: bold;  // was Medium, but Jhenghei would not fallback properly
+
+    a {
+        text-decoration: none; // Hide underline
+    }
 }
 
 a {
@@ -58,17 +62,22 @@ img {
         text-align: center;
     }
 
+    h1, h2 {
+        line-height: 1.15;
+        margin: 0;
+
+        a {
+            color: white;
+        }
+    }
+
     h1 {
         font-size: $heading-font-size;
         letter-spacing: .06em;
-        line-height: 1.15;
-        margin: 0;
     }
 
     h2 {
         font-size: $subheading-font-size;
-        line-height: 1.15;
-        margin: 0;
     }
 
     @include medium-up {
@@ -136,6 +145,10 @@ img {
     header h3 {
         font-size: $post-title-font-size;
         margin: 0;
+
+        a {
+            color: black;
+        }
     }
 
     .post-meta {
@@ -155,6 +168,19 @@ img {
             &::before {
                 content: " · ";
             }
+        }
+
+        a {
+            color: #666;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        abbr {
+            border: 0;
         }
     }
 
