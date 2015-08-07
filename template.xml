@@ -28,7 +28,6 @@
         <b:template-skin />
         <b:include data="blog" name="google-analytics" />
     </head>
-
     <body>
         <div class="nav-bar">
             <div class="nav-content">
@@ -461,14 +460,67 @@
                 </b:widget>
             </b:section>
             <b:section class="widgets" id="widgets" name="Widgets">
-                <b:widget id="Label1" type="Label" locked="false" />
-                <b:widget id="Profile1" type="Profile" locked="false" />
+                <b:widget id="Label1" type="Label" locked="false">
+                    <b:includable id="main">
+                        <b:if cond="data:title != &quot;&quot;">
+                            <h4><data:title /></h4>
+                        </b:if>
+                        <b:if cond="data:display == &quot;list&quot;">
+                            <ul>
+                                <b:loop values="data:labels" var="label">
+                                    <li>
+                                        <b:if cond="data:blog.url == data:label.url">
+                                            <span expr:dir="data:blog.languageDirection"><data:label.name /></span>
+                                            <b:else />
+                                            <a expr:dir="data:blog.languageDirection" expr:href="data:label.url"><data:label.name /></a>
+                                        </b:if>
+                                        <b:if cond="data:showFreqNumbers">
+                                            <span dir="ltr">(<data:label.count />)</span>
+                                        </b:if>
+                                    </li>
+                                </b:loop>
+                            </ul>
+                            <b:else />
+                            <b:loop values="data:labels" var="label">
+                                <span expr:class="&quot;label-size label-size-&quot; + data:label.cssSize">
+                                    <b:if cond="data:blog.url == data:label.url">
+                                        <span expr:dir="data:blog.languageDirection"><data:label.name /></span>
+                                        <b:else />
+                                        <a expr:dir="data:blog.languageDirection" expr:href="data:label.url"><data:label.name /></a>
+                                    </b:if>
+                                    <b:if cond="data:showFreqNumbers">
+                                        <span class="label-count" dir="ltr">(<data:label.count />)</span>
+                                    </b:if>
+                                </span>
+                            </b:loop>
+                        </b:if>
+                        <b:include name="quickedit" />
+                    </b:includable>
+                </b:widget>
+                <b:widget id="Profile1" type="Profile" title="關於作者" locked="false">
+                    <b:includable id="main">
+                        <b:if cond="data:title != &quot;&quot;">
+                            <h4><data:title /></h4>
+                        </b:if>
+                        <b:if cond="data:photo.url != &quot;&quot;">
+                            <a expr:href="data:userUrl"><img class="avatar" expr:alt="data:photo.alt" expr:src="data:photo.url" /></a>
+                        </b:if>
+                        <b:if cond="data:aboutme != &quot;&quot;">
+                            <p><data:aboutme /></p>
+                        </b:if>
+                    </b:includable>
+                </b:widget>
             </b:section>
         </div>
         <div class="footing">
             <footer>
                 <b:section class="footer" id="footer" name="Footer" showaddelement="no">
-                    <b:widget id="Text1" type="Text" locked="false" />
+                    <b:widget id="Attribution1" type="Attribution" locked="false">
+                        <b:includable id="main">
+                            <b:if cond="data:attribution != &quot;&quot;"><data:attribution /></b:if>
+                            <b:include name="quickedit" />
+                        </b:includable>
+                    </b:widget>
                 </b:section>
             </footer>
         </div>
