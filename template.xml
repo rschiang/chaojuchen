@@ -110,6 +110,7 @@
                                     </ul>
                                 </b:if>
                                 <b:include data="post" name="postQuickEdit" />
+                                <b:include cond="data:blog.pageType != &quot;static_page&quot; and data:post.allowComments and data:post.numComments != 0" data="post" name="comment_count_picker" />
                             </div>
                         </header>
                         <div class="post-body entry-content" expr:id="&quot;post-body-&quot; + data:post.id" itemprop="articleBody">
@@ -125,12 +126,9 @@
                                 </b:if>
                                 <b:if cond="data:post.emailPostUrl">
                                     <span class="item-action">
-                                        <a expr:href="data:post.emailPostUrl" expr:title="data:top.emailPostMsg">
-                                            <i class="material-icons">email</i>
-                                        </a>
+                                        <a expr:href="data:post.emailPostUrl" expr:title="data:top.emailPostMsg"><i class="material-icons">email</i></a>
                                     </span>
                                 </b:if>
-                                <b:include cond="data:blog.pageType != &quot;static_page&quot; and data:post.allowComments and data:post.numComments != 0" data="post" name="comment_count_picker" />
                             </div>
                             <div>
                                 <b:include cond="data:post.sharePostUrl" data="post" name="shareButtons"/>
