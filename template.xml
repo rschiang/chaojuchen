@@ -17,12 +17,12 @@ Designer: Poren Chiang
 URL:      github.com/rschiang
 ----------------------------------------------- */
 
-<Variable name="heading.image" description="Heading Image" type="url" default="url(http://rschiang.github.io/chaojuchen/leaves.jpg)" value="url(http://rschiang.github.io/chaojuchen/leaves.jpg)"/>
+<Variable name="heading.image.override" description="Heading Image" type="url" default="url(http://rschiang.github.io/chaojuchen/leaves.jpg)" value="url(http://rschiang.github.io/chaojuchen/leaves.jpg)"/>
 <Variable name="startSide" description="Side where text starts in blog language" type="automatic" default="left" value="left"/>
 <Variable name="endSide" description="Side where text ends in blog language" type="automatic" default="right" value="right"/>
 
 body {
-    background-image: $(heading-image)
+    background-image: $(heading.image.override);
 }
 
 ]]></b:skin>
@@ -34,41 +34,7 @@ body {
         <div class="nav-bar">
             <div class="nav-content">
                 <b:section class="navbar" id="navbar" maxwidgets="1" name="Navbar" showaddelement="no">
-                    <b:widget id="Navbar1" locked="true" title="導覽列" type="Navbar">
-                        <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
-                            function setAttributeOnload(object, attribute, val) {
-                            if(window.addEventListener) {
-                            window.addEventListener(&#39;load&#39;,
-                            function(){ object[attribute] = val; }, false);
-                            } else {
-                            window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
-                            }
-                            }
-                            &lt;/script&gt;
-                            &lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
-                            &lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
-                            &lt;script type=&quot;text/javascript&quot;&gt;
-                            gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
-                            if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
-                            gapi.iframes.getContext().openChild({
-                            url: &#39;https://www.blogger.com/navbar.g?targetBlogID\75917726363851492479\46blogName\75%E9%99%B3%E6%98%AD%E5%A6%82+Chao-ju+Chen\46publishMode\75PUBLISH_MODE_BLOGSPOT\46navbarType\75DARK\46layoutType\75LAYOUTS\46searchRoot\75//chaojuchen.blogspot.com/search\46blogLocale\75zh_TW\46v\0752\46homepageUrl\75http://chaojuchen.blogspot.com/\46vt\0751970415257357842699&#39;,
-                            where: document.getElementById(&quot;navbar-iframe-container&quot;),
-                            id: &quot;navbar-iframe&quot;
-                            });
-                            }
-                            });
-                            &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
-                            (function() {
-                            var script = document.createElement(&#39;script&#39;);
-                            script.type = &#39;text/javascript&#39;;
-                            script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
-                            var head = document.getElementsByTagName(&#39;head&#39;)[0];
-                            if (head) {
-                            head.appendChild(script);
-                            }})();
-                            &lt;/script&gt;
-                        </b:includable>
-                    </b:widget>
+                    <b:widget id="Navbar1" locked="true" title="導覽列" type="Navbar" />
                 </b:section>
             </div>
         </div>
@@ -109,7 +75,7 @@ body {
             </b:section>
             <b:section class="widgets" id="widgets">
                 <b:widget id="Label1" type="Label" locked="false" />
-                <b:widget id="BlogProfile1" type="BlogProfile" locked="false" />
+                <b:widget id="Profile1" type="Profile" locked="false" />
             </b:section>
         </div>
         <div class="footing">
@@ -393,22 +359,22 @@ body {
             </div>
         </b:if>
     </b:includable>
-    <b:includable id='feedLinksBody' var='links'>
-        <div class='feed-links'>
+    <b:includable id="feedLinksBody" var="links">
+        <div class="feed-links">
             <data:feedLinksMsg/>
-            <b:loop values='data:links' var='f'>
-                <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+            <b:loop values="data:links" var="f">
+                <a class="feed-link" expr:href="data:f.url" expr:type="data:f.mimeType" target="_blank"><data:f.name/> (<data:f.feedType/>)</a>
             </b:loop>
         </div>
     </b:includable>
-    <b:includable id='iframe_comments' var='post'>
+    <b:includable id="iframe_comments" var="post">
 
-        <b:if cond='data:post.allowIframeComments'>
-            <script expr:src='data:post.iframeCommentSrc' type='text/javascript'/>
-            <div class='cmt_iframe_holder' expr:data-href='data:post.canonicalUrl' expr:data-viewtype='data:post.viewType'/>
+        <b:if cond="data:post.allowIframeComments">
+            <script expr:src="data:post.iframeCommentSrc" type="text/javascript"/>
+            <div class="cmt_iframe_holder" expr:data-href="data:post.canonicalUrl" expr:data-viewtype="data:post.viewType"/>
 
-            <b:if cond='data:post.embedCommentForm == &quot;false&quot;'>
-                <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
+            <b:if cond="data:post.embedCommentForm == &quot;false&quot;">
+                <a expr:href="data:post.addCommentUrl" expr:onclick="data:post.addCommentOnclick"><data:postCommentMsg/></a>
             </b:if>
         </b:if>
     </b:includable>
@@ -426,56 +392,56 @@ body {
             </b:if>
         </div>
     </b:includable>
-    <b:includable id='postQuickEdit' var='post'>
-        <b:if cond='data:post.editUrl'>
-            <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
-                <a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg'>
-                    <img alt='' class='icon-action' height='18' src='//img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+    <b:includable id="postQuickEdit" var="post">
+        <b:if cond="data:post.editUrl">
+            <span expr:class="&quot;item-control &quot; + data:post.adminClass">
+                <a expr:href="data:post.editUrl" expr:title="data:top.editPostMsg">
+                    <img alt="" class="icon-action" height="18" src="//img2.blogblog.com/img/icon18_edit_allbkg.gif" width="18"/>
                 </a>
             </span>
         </b:if>
     </b:includable>
-    <b:includable id='shareButtons' var='post'>
-        <b:if cond='data:top.showEmailButton'>
-            <a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if>
-            <b:if cond='data:top.showBlogThisButton'><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if>
-            <b:if cond='data:top.showTwitterButton'><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if>
-            <b:if cond='data:top.showFacebookButton'><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if>
-            <b:if cond='data:top.showPinterestButton'><a class='goog-inline-block share-button sb-pinterest' expr:href='data:post.sharePostUrl + &quot;&amp;target=pinterest&quot;' expr:title='data:top.shareToPinterestMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToPinterestMsg/></span></a></b:if>
-            <b:if cond='data:top.showDummy'><div class='goog-inline-block dummy-container'><data:post.dummyTag/></div></b:if>
+    <b:includable id="shareButtons" var="post">
+        <b:if cond="data:top.showEmailButton">
+            <a class="goog-inline-block share-button sb-email" expr:href="data:post.sharePostUrl + &quot;&amp;target=email&quot;" expr:title="data:top.emailThisMsg" target="_blank"><span class="share-button-link-text"><data:top.emailThisMsg/></span></a></b:if>
+            <b:if cond="data:top.showBlogThisButton"><a class="goog-inline-block share-button sb-blog" expr:href="data:post.sharePostUrl + &quot;&amp;target=blog&quot;" expr:onclick="&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;" expr:title="data:top.blogThisMsg" target="_blank"><span class="share-button-link-text"><data:top.blogThisMsg/></span></a></b:if>
+            <b:if cond="data:top.showTwitterButton"><a class="goog-inline-block share-button sb-twitter" expr:href="data:post.sharePostUrl + &quot;&amp;target=twitter&quot;" expr:title="data:top.shareToTwitterMsg" target="_blank"><span class="share-button-link-text"><data:top.shareToTwitterMsg/></span></a></b:if>
+            <b:if cond="data:top.showFacebookButton"><a class="goog-inline-block share-button sb-facebook" expr:href="data:post.sharePostUrl + &quot;&amp;target=facebook&quot;" expr:onclick="&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;" expr:title="data:top.shareToFacebookMsg" target="_blank"><span class="share-button-link-text"><data:top.shareToFacebookMsg/></span></a></b:if>
+            <b:if cond="data:top.showPinterestButton"><a class="goog-inline-block share-button sb-pinterest" expr:href="data:post.sharePostUrl + &quot;&amp;target=pinterest&quot;" expr:title="data:top.shareToPinterestMsg" target="_blank"><span class="share-button-link-text"><data:top.shareToPinterestMsg/></span></a></b:if>
+            <b:if cond="data:top.showDummy"><div class="goog-inline-block dummy-container"><data:post.dummyTag/></div></b:if>
     </b:includable>
-    <b:includable id='status-message'>
-        <b:if cond='data:navMessage'>
-            <div class='status-msg-wrap'>
-                <div class='status-msg-body'>
+    <b:includable id="status-message">
+        <b:if cond="data:navMessage">
+            <div class="status-msg-wrap">
+                <div class="status-msg-body">
                     <data:navMessage/>
                 </div>
-                <div class='status-msg-border'>
-                    <div class='status-msg-bg'>
-                        <div class='status-msg-hidden'><data:navMessage/></div>
+                <div class="status-msg-border">
+                    <div class="status-msg-bg">
+                        <div class="status-msg-hidden"><data:navMessage/></div>
                     </div>
                 </div>
             </div>
-            <div style='clear: both;'/>
+            <div style="clear: both;"/>
         </b:if>
     </b:includable>
-    <b:includable id='threaded-comment-form' var='post'>
-        <div class='comment-form'>
-            <a name='comment-form'/>
-            <b:if cond='data:mobile'>
+    <b:includable id="threaded-comment-form" var="post">
+        <div class="comment-form">
+            <a name="comment-form"/>
+            <b:if cond="data:mobile">
                 <p><data:blogCommentMessage/></p>
                 <data:blogTeamBlogMessage/>
-                <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
-                <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>
+                <a expr:href="data:post.commentFormIframeSrc" id="comment-editor-src"/>
+                <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src="" style="display: none" width="100%"/>
                 <b:else/>
                 <p><data:blogCommentMessage/></p>
                 <data:blogTeamBlogMessage/>
-                <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
-                <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' width='100%'/>
+                <a expr:href="data:post.commentFormIframeSrc" id="comment-editor-src"/>
+                <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src="" width="100%"/>
             </b:if>
             <data:post.friendConnectJs/>
             <data:post.cmtfpIframe/>
-            <script type='text/javascript'>
+            <script type="text/javascript">
                 BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
             </script>
         </div>
@@ -660,36 +626,36 @@ body {
 // ]]>
         </script>
     </b:includable>
-    <b:includable id='threaded_comments' var='post'>
-        <div class='comments' id='comments'>
-            <a name='comments'/>
+    <b:includable id="threaded_comments" var="post">
+        <div class="comments" id="comments">
+            <a name="comments"/>
             <h4><data:post.commentLabelFull/>:</h4>
 
-            <div class='comments-content'>
-                <b:include cond='data:post.embedCommentForm' data='post' name='threaded_comment_js'/>
-                <div id='comment-holder'>
+            <div class="comments-content">
+                <b:include cond="data:post.embedCommentForm" data="post" name="threaded_comment_js"/>
+                <div id="comment-holder">
                     <data:post.commentHtml/>
                 </div>
             </div>
 
-            <p class='comment-footer'>
-                <b:if cond='data:post.allowNewComments'>
-                    <b:include data='post' name='threaded-comment-form'/>
+            <p class="comment-footer">
+                <b:if cond="data:post.allowNewComments">
+                    <b:include data="post" name="threaded-comment-form"/>
                     <b:else/>
                     <data:post.noNewCommentsText/>
                 </b:if>
             </p>
 
-            <b:if cond='data:showCmtPopup'>
-                <div id='comment-popup'>
-                    <iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+            <b:if cond="data:showCmtPopup">
+                <div id="comment-popup">
+                    <iframe allowtransparency="true" frameborder="0" id="comment-actions" name="comment-actions" scrolling="no">
                     </iframe>
                 </div>
             </b:if>
 
-            <div id='backlinks-container'>
-                <div expr:id='data:widget.instanceId + &quot;_backlinks-container&quot;'>
-                    <b:include cond='data:post.showBacklinks' data='post' name='backlinks'/>
+            <div id="backlinks-container">
+                <div expr:id="data:widget.instanceId + &quot;_backlinks-container&quot;">
+                    <b:include cond="data:post.showBacklinks" data="post" name="backlinks"/>
                 </div>
             </div>
         </div>
