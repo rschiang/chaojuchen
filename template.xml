@@ -175,23 +175,24 @@
                             <a name="comment-form"/>
                             <b:if cond="data:mobile">
                                 <h4 id="comment-post-message">
-                                    <a expr:id="data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;" href="javascript:void(0)"><data:postCommentMsg/></a></h4>
-                                    <p><data:blogCommentMessage/></p>
-                                    <data:blogTeamBlogMessage/>
-                                    <a expr:href="data:post.commentFormIframeSrc" id="comment-editor-src"/>
-                                    <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src="" style="display: none" width="100%" />
-                                    <b:else/>
-                                    <h4 id="comment-post-message"><data:postCommentMsg/></h4>
-                                    <p><data:blogCommentMessage/></p>
-                                    <data:blogTeamBlogMessage/>
-                                    <a expr:href="data:post.commentFormIframeSrc" id="comment-editor-src"/>
-                                    <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src="" width="100%"/>
-                                </b:if>
-                                <data:post.friendConnectJs/>
-                                <data:post.cmtfpIframe/>
-                                <script type="text/javascript">
-                                    BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
-                                </script>
+                                    <a expr:id="data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;" href="javascript:void(0)"><data:postCommentMsg/></a>
+                                </h4>
+                                <p><data:blogCommentMessage /></p>
+                                <data:blogTeamBlogMessage />
+                                <a expr:href="data:post.commentFormIframeSrc" id="comment-editor-src"/>
+                                <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src="" style="display: none" width="100%" />
+                                <b:else />
+                                <h4 id="comment-post-message"><data:postCommentMsg /></h4>
+                                <p><data:blogCommentMessage /></p>
+                                <data:blogTeamBlogMessage />
+                                <a expr:href="data:post.commentFormIframeSrc" id="comment-editor-src" />
+                                <iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="410" id="comment-editor" name="comment-editor" src="" width="100%" />
+                            </b:if>
+                            <data:post.friendConnectJs/>
+                            <data:post.cmtfpIframe/>
+                            <script type="text/javascript">
+                                BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+                            </script>
                         </div>
                     </b:includable>
                     <b:includable id="commentDeleteIcon" var="comment">
@@ -220,7 +221,7 @@
                         <div class="comments" id="comments">
                             <a name="comments"/>
                             <b:if cond="data:post.allowComments">
-                                <h4><data:post.commentLabelFull/>:</h4>
+                                <h4><data:post.commentLabelFull /></h4>
 
                                 <b:if cond="data:post.commentPagingRequired">
                                     <span class="paging-control-container">
@@ -521,7 +522,7 @@
         </div>
         <div class="footing">
             <footer>
-                <b:section class="footer" id="footer" name="Footer" showaddelement="no">
+                <b:section class="footer" id="footer" name="頁尾" showaddelement="no">
                     <b:widget id="Attribution1" type="Attribution" locked="false">
                         <b:includable id="main">
                             <b:if cond="data:attribution != &quot;&quot;"><data:attribution /></b:if>
