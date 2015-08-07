@@ -31,7 +31,7 @@
     <body>
         <div class="nav-bar">
             <div class="nav-content">
-                <b:section class="navbar" id="navbar" maxwidgets="1" name="Navbar" showaddelement="no">
+                <b:section class="navbar" id="navbar" maxwidgets="1" name="導覽列" showaddelement="no">
                     <b:widget id="Navbar1" locked="true" title="導覽列" type="Navbar">
                         <b:includable id="main">&lt;script type=&quot;text/javascript&quot;&gt; function setAttributeOnload(object, attribute, val) { if(window.addEventListener) { window.addEventListener(&#39;load&#39;, function(){ object[attribute] = val; }, false); } else { window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; }); } } &lt;/script&gt; &lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() { if (gapi.iframes &amp;&amp; gapi.iframes.getContext) { gapi.iframes.getContext().openChild({ url: &#39;https://www.blogger.com/navbar.g?targetBlogID\75917726363851492479\46blogName\75%E9%99%B3%E6%98%AD%E5%A6%82+Chao-ju+Chen\46publishMode\75PUBLISH_MODE_BLOGSPOT\46navbarType\75LIGHT\46layoutType\75LAYOUTS\46searchRoot\75//chaojuchen.blogspot.com/search\46blogLocale\75zh_TW\46v\0752\46homepageUrl\75http://chaojuchen.blogspot.com/\46vt\0751970415257357842699&#39;, where: document.getElementById(&quot;navbar-iframe-container&quot;), id: &quot;navbar-iframe&quot; }); } }); &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt; (function() { var script = document.createElement(&#39;script&#39;); script.type = &#39;text/javascript&#39;; script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;; var head = document.getElementsByTagName(&#39;head&#39;)[0]; if (head) { head.appendChild(script); }})(); &lt;/script&gt;</b:includable>
                     </b:widget>
@@ -50,8 +50,8 @@
                 <h2>Chao-ju Chen</h2>
             </header>
         </div>
-        <b:section class="tabs" id="tabs" name="Tabs" showaddelement="no">
-            <b:widget id="PageList1" locked="true" title="網頁連結" type="PageList">
+        <b:section class="tabs" id="tabs" name="分頁" showaddelement="no">
+            <b:widget id="PageList1" locked="true" title="頁面連結" type="PageList">
                 <b:includable id="main">
                     <nav>
                         <b:loop values="data:links" var="link">
@@ -66,7 +66,7 @@
             </b:widget>
         </b:section>
         <div class="content">
-            <b:section class="posts" id="main" name="Main" showaddelement="no">
+            <b:section class="posts" id="main" name="主文" showaddelement="no">
                 <b:widget id="Blog1" locked="true" title="網誌文章" type="Blog">
                     <b:includable id="main" var="top">
                         <b:include data="top" name="status-message" />
@@ -466,8 +466,8 @@
                     </b:includable>
                 </b:widget>
             </b:section>
-            <b:section class="widgets" id="widgets" name="Widgets">
-                <b:widget id="Label1" type="Label" locked="false">
+            <b:section class="widgets" id="widgets" name="小工具">
+                <b:widget id="Label1" type="Label" title="文章分類" locked="false">
                     <b:includable id="main">
                         <b:if cond="data:title != &quot;&quot;">
                             <h4><data:title /></h4>
