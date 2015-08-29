@@ -137,7 +137,7 @@ img {
     }
 }
 
-.posts {
+.blog-post .posts {
     @include grid-column(2);
 }
 
@@ -190,9 +190,14 @@ img {
 }
 
 .widgets {
-    @include grid-column(1);
+    display: none;  // Hide widgets by default
     font-size: $widget-font-size;
     line-height: 1.5;
+
+    .blog-post & {
+        display: block; // Show it only on blog post pages
+        @include grid-column(1);
+    }
 
     section {
         border-top: 2px #666 solid;

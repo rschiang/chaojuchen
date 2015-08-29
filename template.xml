@@ -29,7 +29,7 @@
             ]]></b:skin>
         <b:include data="blog" name="google-analytics" />
     </head>
-    <body>
+    <body expr:class="data:blog.pageType == &quot;static_page&quot; ? &quot;blog-page&quot; : &quot;blog-post&quot;">
         <div class="nav-bar">
             <div class="nav-content">
                 <b:section class="navbar" id="navbar" maxwidgets="1" name="導覽列" showaddelement="no">
