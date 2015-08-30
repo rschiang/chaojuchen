@@ -80,7 +80,7 @@
             </b:widget>
         </b:section>
         <script type="text/javascript">
-            if (!(/\/p\/publications\-/gi).test(window.location)) {
+            if (!(/\/p\/publications/gi).test(window.location)) {
                 var n = document.getElementById("PageList2");
                 n.parentElement.removeChild(n);
             }
