@@ -79,6 +79,12 @@
                 </b:includable>
             </b:widget>
         </b:section>
+        <script type="text/javascript">
+            if (!(/\/p\/publications\-/gi).test(window.location)) {
+                var n = document.getElementById("PageList2");
+                n.parentElement.removeChild(n);
+            }
+        </script>
         <div class="content">
             <b:section class="posts" id="main" name="主文" showaddelement="no">
                 <b:widget id="Blog1" locked="true" title="網誌文章" type="Blog">
