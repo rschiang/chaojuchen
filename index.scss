@@ -120,6 +120,15 @@ img {
             display: inline-block;
         }
     }
+
+    .subnav {
+        background: #222;
+        font-size: #{$subtabs-font-size / $tabs-font-size}em;
+
+        a:hover {
+            background: #444;
+        }
+    }
 }
 
 .content {
