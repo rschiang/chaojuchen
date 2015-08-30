@@ -65,6 +65,19 @@
                     </nav>
                 </b:includable>
             </b:widget>
+            <b:widget id="PageList2" locked="true" title="子頁面連結" type="PageList">
+                <b:includable id="main">
+                    <nav class="subnav">
+                        <b:loop values="data:links" var="link">
+                            <b:if cond="data:link.isCurrentPage">
+                                <a class="nav-item selected" expr:href="data:link.href"><data:link.title /></a>
+                                <b:else/>
+                                <a class="nav-item" expr:href="data:link.href"><data:link.title /></a>
+                            </b:if>
+                        </b:loop>
+                    </nav>
+                </b:includable>
+            </b:widget>
         </b:section>
         <div class="content">
             <b:section class="posts" id="main" name="主文" showaddelement="no">
