@@ -42,11 +42,7 @@
         <div class="heading">
             <header>
                 <h1>
-                    <b:if cond="data:blog.url == data:blog.homepageUrl">
-                        陳昭如
-                        <b:else/>
-                        <a expr:href="data:blog.homepageUrl">陳昭如</a>
-                    </b:if>
+                    <a expr:href="data:blog.homepageUrl + &quot;p/portfolio.html&quot;">陳昭如</a>
                 </h1>
                 <h2>Chao-ju Chen</h2>
             </header>
@@ -530,9 +526,14 @@
                         </b:if>
                         <b:if cond="data:photo.url != &quot;&quot;">
                             <a expr:href="data:userUrl"><img class="avatar" expr:alt="data:photo.alt" expr:src="data:photo.url" /></a>
+                            <b:else />
+                            <a href="http://chaojuchen.blogspot.com/p/portfolio.html"><img class="avatar" alt="大頭貼" src="http://gravatar.com/avatar/af3b0fd293b32b3ecf950e76dcf70382?d=identicon" /></a>
                         </b:if>
                         <b:if cond="data:aboutme != &quot;&quot;">
                             <p><data:aboutme /></p>
+                            <b:else />
+                            <h4>陳昭如 Chao-Ju Chen</h4>
+                            <p>國立臺灣大學法律學院​專任教授​​​。</p>
                         </b:if>
                     </b:includable>
                 </b:widget>
