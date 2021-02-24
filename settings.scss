@@ -1,8 +1,7 @@
 // Definitions
 
-$fallback-font: 'Source Han Sans TC', 'Noto Sans T Chinese',
-                'Source Han Sans TWHK', 'Noto Sans CJK',
-                'Pingfang TC', 'LiHei Pro', 'Apple LiGothic',
+$fallback-font: 'Source Han Sans TC', 'Noto Sans TC',
+                'Pingfang TC', 'LiHei Pro',
                 'Microsoft Jhenghei', sans-serif;
 
 $header-font: join((Montserrat, 'Avenir Next', 'Century Gothic'), $fallback-font);

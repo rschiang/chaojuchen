@@ -1,5 +1,9 @@
 // Reset.scss: Clears Blogger default stylesheets
 
+html, body {
+    padding: 0;
+}
+
 .widget, .section {
     margin: 0;
     padding: 0;

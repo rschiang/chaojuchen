@@ -8,8 +8,8 @@
         <title><data:blog.pageTitle/></title>
 
         <b:template-skin />
-        <link rel="stylesheet" href="http://rschiang.github.io/chaojuchen/index.css" type="text/css" />
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat" type="text/css" />
+        <link rel="stylesheet" href="https://rschiang.github.io/chaojuchen/index.css" type="text/css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&amp;display=swap" type="text/css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" />
         <b:skin><![CDATA[/*
             -----------------------------------------------
@@ -19,7 +19,7 @@
             URL:      github.com/rschiang
             ----------------------------------------------- */
 
-            <Variable name="heading.image.override" description="Heading Image" type="url" default="url(http://rschiang.github.io/chaojuchen/leaves.jpg)" value="url(http://rschiang.github.io/chaojuchen/leaves.jpg)"/>
+            <Variable name="heading.image.override" description="Heading Image" type="url" default="url(https://rschiang.github.io/chaojuchen/leaves.jpg)" value="url(https://rschiang.github.io/chaojuchen/leaves.jpg)"/>
             <Variable name="startSide" description="Side where text starts in blog language" type="automatic" default="left" value="left"/>
             <Variable name="endSide" description="Side where text ends in blog language" type="automatic" default="right" value="right"/>
 
